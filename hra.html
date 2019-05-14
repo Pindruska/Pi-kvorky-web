@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Piškvorky</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Piškvorky</h1>
+        <form>
+        	<input name="pole" type="hidden" value="{{ pole}}">
+        	{% for cislo, znak in ocislovane_pole %}
+        	{% if znak == '-' %}
+        		<input type="radio" name="cislo" value="{{ cislo }}">
+        	{% else %}
+        		{{ znak }}
+        	{% endif %}
+        	{% endfor %}
+
+        	<input type="submit" value="Odeslat">
+
+
+        </form>
+        <a href="{{ url_for('hra') }}">Nova hra</a>
+    </body>
+</html>
